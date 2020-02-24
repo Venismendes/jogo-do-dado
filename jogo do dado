@@ -52,22 +52,18 @@ while jogadores == 1:
                     low_high = input('|[L] = 123 | [H] = 456 | [S] = Sair: ').upper()
 
                 print()
-
+                print(f'Dado: {na} = {valor}')
                 if low_high == valor and (low_high == 'L' or low_high == 'H'):
-                    print(f'Dado: {na} = {valor}')
                     print(f'Você acertou e ganhou {aposta} pontos!!')
                     pontos_jogador1 = pontos_jogador1 + aposta
-                    print(f'Seus pontos: {pontos_jogador1}')
-                    print('=' * 30)
                     menu = False
                 elif low_high == 'L' or low_high == 'H':
-                    print(f'Dado: {na} = {valor}')
                     print(f'Você errou e perdeu {aposta} pontos!!')
                     pontos_jogador1 = pontos_jogador1 - aposta
-                    print(f'Seus pontos: {pontos_jogador1}')
-                    print('=' * 30)
                     menu = False
 
+                print(f'Seus pontos: {pontos_jogador1}')
+                print('=' * 30)
 
                 if low_high == 'S':
                     menu = True
