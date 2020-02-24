@@ -72,14 +72,16 @@ while jogadores == 1:
                 if low_high == 'S':
                     menu = True
                     break
-                if low_high == 'P':
-                    print(f'Você possui {pontos_jogador1} pontos.')
+
+            if opcao == 'S':
+                exit()
+            if opcao == 'P':
+                print(f'Você possui {pontos_jogador1} pontos.')
 
             if menu == True:
                 print('=' * 30)
                 opcao = input('Opção: ').upper()
                 print('=' * 30)
-        if opcao == 'S':
-            exit()
+
 else:
     print('modo 2 jogadores ainda não desenvolvido')
