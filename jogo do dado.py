@@ -8,7 +8,9 @@ jogador = input('Olá qual o seu nome: ')
 print(f'Bem vindo ao jogo do dado {jogador}')
 
 
-quantidade_jogadores = input('Deseja jogador de 2 jogadores? [S/N]: ').upper()
+#quantidade_jogadores = input('Deseja jogador de 2 jogadores? [S/N]: ').upper()
+
+quantidade_jogadores = 0
 
 
 if quantidade_jogadores == 'S':
@@ -40,19 +42,20 @@ while jogadores == 1:
                     try:
                         aposta = int(input('Quantos pontos: '))
                         if aposta <= 0 or aposta > pontos_jogador1:
-                            aposta = int(input(f'Seu valor é menor que 1 ou maior que {pontos_jogador1}: '))
-                            break
+                            print(f'O valor deve ser maior que 0, seus pontos são {pontos_jogador1}: ')
+
                         else:
+                            low_high = input('|[L] = 123 | [H] = 456 | [S] = Sair: ').upper()
                             break
                     except ValueError:
-                        print('valor inválido, somente tente só números inteiros.')
-                low_high = input('|[L] = 123 | [H] = 456 | [S] = Sair: ').upper()
+                        print('valor inválido, digite apenas números inteiros.')
+                
+                
                 while low_high != 'H' and low_high != 'L' and low_high != 'S':
                     print('Valor inválido')
                     low_high = input('|[L] = 123 | [H] = 456 | [S] = Sair: ').upper()
 
-                print()
-                print(f'Dado: {na} = {valor}')
+                
                 if low_high == valor and (low_high == 'L' or low_high == 'H'):
                     print(f'Você acertou e ganhou {aposta} pontos!!')
                     pontos_jogador1 = pontos_jogador1 + aposta
@@ -61,13 +64,16 @@ while jogadores == 1:
                     print(f'Você errou e perdeu {aposta} pontos!!')
                     pontos_jogador1 = pontos_jogador1 - aposta
                     menu = False
-
-                print(f'Seus pontos: {pontos_jogador1}')
-                print('=' * 30)
-
+                    
                 if low_high == 'S':
                     menu = True
                     break
+                 
+                print()
+                print(f'Dado: {na} = {valor}')
+
+                print(f'Seus pontos: {pontos_jogador1}')
+                print('=' * 30)
 
             if opcao == 'S':
                 exit()
