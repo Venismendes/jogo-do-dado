@@ -40,6 +40,9 @@ while jogadores == 1:
             if opcao == 'J':
                 while True:
                     try:
+                        if pontos_jogador1 <= 0:
+                            print('Fim do jogo!!')
+                            exit()
                         aposta = int(input('Quantos pontos: '))
                         if aposta <= 0 or aposta > pontos_jogador1:
                             print(f'O valor deve ser maior que 0, seus pontos são {pontos_jogador1}: ')
